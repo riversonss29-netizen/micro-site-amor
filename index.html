@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Micro Site - Riverson 🤍 Samuel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fef9f7;
+      text-align: center;
+      color: #333;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .container {
+      max-width: 750px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    h1 {
+      color: #555;
+      transition: color 0.3s;
+    }
+    img {
+      width: 220px;
+      border-radius: 50%;
+      margin: 15px 0;
+      border: 3px solid #ffffff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .quiz {
+      margin: 20px 0;
+      text-align: left;
+    }
+    .quiz button {
+      margin: 5px;
+      padding: 8px 15px;
+      border: none;
+      background: #fff0f5;
+      color: #555;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .quiz button:hover {
+      background: #ffe4e1;
+      transform: scale(1.1) rotate(-1deg);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .message {
+      margin-top: 20px;
+      padding: 15px;
+      background: #fff0f5;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .message:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .dica-button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      border: none;
+      background: #ffe4e1;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .dica-button:hover {
+      background: #ffcfd2;
+      transform: scale(1.1) rotate(2deg);
+    }
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: red;
+      animation: fall 3s linear forwards;
+      z-index: 999;
+      pointer-events: none;
+    }
+    @keyframes fall {
+      0% {transform: translateY(0) rotate(0deg);}
+      100% {transform: translateY(600px) rotate(360deg);}
+    }
+    .heart {
+      position: absolute;
+      color: #ff69b4;
+      font-size: 20px;
+      animation: heart-rise 2s forwards;
+      pointer-events: none;
+    }
+    @keyframes heart-rise {
+      0% {transform: translateY(0) scale(0.5); opacity: 1;}
+      100% {transform: translateY(-200px) scale(1.2); opacity: 0;}
+    }
+    .game-heart {
+      position: absolute;
+      font-size: 30px;
+      color: #ff69b4;
+      cursor: pointer;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🤍 Riverson & Samuel 🤍</h1><!-- Foto do casal -->
+<img src="file_000000000bac61f7833e09418e14895a.png" alt="Nossa foto" onclick="showSecretMessage()">
+
+<!-- Música de fundo -->
+<audio controls autoplay loop>
+  <source src="medicine.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
+
+<!-- Quiz -->
+<div class="quiz">
+  <h2>Nosso Quiz ❤️</h2>
+
+  <p><b>1.</b> Onde demos nosso primeiro beijo?</p>
+  <button onclick="alert('Acertou! Foi no cinema 🎬💙'); createHeart(event)">Cinema</button>
+  <button onclick="alert('Errado kkk tenta de novo 😅'); createHeart(event)">Sua casa</button>
+  <button onclick="alert('Errado kkk tenta de novo 😅'); createHeart(event)">Lanchonete</button>
+  <button onclick="alert('Errado kkk tenta de novo 😅'); createHeart(event)">Shopping</button>
+
+  <p><b>2.</b> Eu te chamo de qual titã?</p>
+  <button onclick="alert('Errado kkk tenta de novo 😅'); createHeart(event)">Blindado</button>
+  <button onclick="alert('Acertouu! Meu titã Carroça 💙'); createHeart(event)">Carroça</button>
+  <button onclick="alert('Errado kkk tenta de novo 😅'); createHeart(event)">Ataque</button>
+  <button onclick="alert('Errado kkk tenta de novo 😅'); createHeart(event)">Colossal</button>
+
+  <p><b>3.</b> Qual foi o último filme que vimos juntos?</p>
+  <button onclick="alert('Errado kkk tenta de novo 😅'); createHeart(event)">Como treinar o seu dragão</button>
+  <button onclick="alert('Errado kkk tenta de novo 😅'); createHeart(event)">Gato de Botas</button>
+  <button onclick="alert('Acertouu! Fale Comigo 🎥💙'); createHeart(event)">Fale Comigo</button>
+  <button onclick="alert('Errado kkk tenta de novo 😅'); createHeart(event)">Super Man</button>
+
+  <br><br>
+  <button onclick="finishQuiz()">Finalizar Quiz</button>
+</div>
+
+<!-- Mensagem secreta -->
+<div class="message">
+  <h3>Mensagem secreta 🔐</h3>
+  <p><code>01100101 01110101 00100000 01110100 01100101 00100000 01100001 01101101 01101111 00100000 01100101 01101101 00100000 01100010 01101001 01101110 11000011 10100000 01110010 01101001 01101111 01110011 00100000 01110100 01100001 01101101 01100010 11000011 10101001 01101101</code></p>
+  <button class="dica-button" onclick="alert('Dica: Cada grupo de 8 números binários representa uma letra em ASCII. Você pode usar um tradutor online de binário para texto.')">Dica 💡</button>
+</div>
+
+<!-- Mensagem normal -->
+<div class="message">
+  <h3>Cartinha virtual ✨</h3>
+  <p>
+    Amor, eu sei que não sou o melhor… talvez não seja o mais interessante, mas você me faz querer ser melhor todos os dias!<br><br>
+    Eu quero ser seu garoto favorito, aquele que você pensa todos os dias, aquele que vem à sua mente antes de dormir. Mal posso esperar para ser seu.<br><br>
+    Me promete uma coisa? Corra até mim quando o mundo for cruel com você. Eu não quero estar só nos momentos bons, mas em todos, porque estou aqui para o que você precisar.<br><br>
+    Se a lua refletisse meus sentimentos, o céu inteiro brilharia só por você.<br><br>
+    Eu não sei ser apenas ficante… eu me declaro e quero algo para a vida toda. Espero que goste e não ache exagerado 😅<span style="color:white;">🤍</span>.
+  </p>
+</div>
+
+  </div> <script>
+    let gameScore = 0;
+
+    function createConfetti() {
+      for (let i = 0; i < 50; i++) {
+        let confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.background = ['#ff6b6b','#ffb6b9','#ffdfd3','#ffd6e0'][Math.floor(Math.random()*4)];
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 3000);
+      }
+    }
+
+    function finishQuiz() {
+      alert('🎉 PARABÉNS! Seu prêmio é namorar comigo 💙');
+      createConfetti();
+    }
+
+    function createHeart(e) {
+      let heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = e.pageX + 'px';
+      heart.style.top = e.pageY + 'px';
+      heart.innerText = '💖';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 2000);
+    }
+
+    function showSecretMessage() {
+      alert('achou a mensagem secreta! eu amo você 🤍');
+    }
+
+    // Mini jogo corações aleatórios
+    function spawnGameHeart() {
+      let heart = document.createElement('div');
+      heart.className = 'game-heart';
+      heart.style.left = Math.random() * (window.innerWidth - 50) + 'px';
+      heart.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+      heart.innerText = '💖';
+      document.body.appendChild(heart);
+
+      heart.onclick = () => {
+        gameScore++;
+        heart.remove();
+        if(gameScore >= 10){
+          alert('Você clicou em 10 corações! Você é incrível 💙');
+          gameScore = 0;
+        }
+      };
+
+      setTimeout(() => { if(heart.parentNode) heart.remove(); }, 5000);
+    }
+
+    setInterval(spawnGameHeart, 1500); // Corações aparecem a cada 1,5s
+  </script></body>
+</html>
